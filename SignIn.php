@@ -11,12 +11,32 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
 
-    <!-- Bootstrap core CSS -->
-<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <script type="text/javascript">
+      function check_pass()
+      {
+        var pass1 = document.getElementById("inputPasswordSignUp1").value;
+        var pass2 = document.getElementById("inputPasswordSignUp2").value;
 
-
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+        if(pass1 == "" || pass2 == "")
+        {
+          document.getElementById("pass_same").innerHTML = "";
+          document.getElementById("pass_same").style.background = "none";
+          document.getElementById("pass_same").style.color = "White";
+        }
+        else if(pass1==pass2)
+        {
+          document.getElementById("pass_same").innerHTML = " Passwords Match ";
+          document.getElementById("pass_same").style.background = "Green";
+          document.getElementById("pass_same").style.color = "White";
+        }
+        else
+        {
+          document.getElementById("pass_same").innerHTML = "No Match";
+          document.getElementById("pass_same").style.background = "Red";
+          document.getElementById("pass_same").style.color = "White";
+        }
+      }
+    </script>
   </head>
 
 <body class="text-center">
@@ -54,7 +74,7 @@
 
 <?php
 
-if(isset($_POST['enteredUsername'])  && isset($_POST['enteredEmail']) && isset($_POST['enteredPassword']))
+if(isset($_POST['enteredUsername'])  && isset($_POST['enteredEmail']) && isset($_POST['enteredPassword']) && $_POST['enteredPassword'] == $_POST['enteredPassword2'])
 {
     // check if the username has been set
   //be sure to validate and clean your variables
@@ -94,10 +114,11 @@ if(isset($_POST['enteredUsername'])  && isset($_POST['enteredEmail']) && isset($
     <input type="email" name="enteredEmail" id="inputEmailSignUp" class="form-control" placeholder="Email address" required autofocus>
 
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" name="enteredPassword" id="inputPasswordSignUp1" class="form-control" placeholder="Password" required>
+    <input type="password" name="enteredPassword" id="inputPasswordSignUp1" class="form-control" onKeyUp="check_pass()" placeholder="Password" required>
 
      <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPasswordSignUp2" class="form-control" placeholder="Confirm Password" required>
+    <input type="password" name="enteredPassword2" id="inputPasswordSignUp2" class="form-control" onKeyUp="check_pass()" placeholder="Confirm Password" required>
+    <div id="pass_same" style="display:inline;">test</div>
 
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
 </form>
