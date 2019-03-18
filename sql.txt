@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS `userData`(
+    `username` VARCHAR(50) NOT NULL,
+    `password` VARCHAR(50) NOT NULL,
+    `email` VARCHAR(50) NOT NULL,
+    `id` INT(2) NOT NULL AUTO_INCREMENT,
+    `isAdmin` BIT NOT NULL,
+    PRIMARY KEY(`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = latin1 AUTO_INCREMENT = 13;
+
+
+CREATE TABLE IF NOT EXISTS `postData`(
+    `title` VARCHAR(150) NOT NULL,
+    `story` VARCHAR(10000) NOT NULL,
+    `postTime` DATETIME NOT NULL DEFAULT NOW(),
+    `authorId` INT(2) NOT NULL,
+    `authorName` VARCHAR(50) NOT NULL,
+    `isPosted` BIT NOT NULL,
+    `postId` INT(2) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY(`postId`)
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
