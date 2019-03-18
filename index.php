@@ -31,7 +31,7 @@
         }
         else
         {
-          document.getElementById("pass_same").innerHTML = "No Match";
+          document.getElementById("pass_same").innerHTML = " Passwords Don't Match";
           document.getElementById("pass_same").style.background = "Red";
           document.getElementById("pass_same").style.color = "White";
         }
@@ -39,7 +39,7 @@
     </script>
   </head>
 
-<body class="text-center">
+<body class="text-center" style="background-color:#E9E9E9">
 
 
 <?php
