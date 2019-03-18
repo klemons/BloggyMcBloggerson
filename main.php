@@ -20,7 +20,7 @@ if(!(isset($_SESSION['logged_in'])) || $_SESSION['logged_in'] == false)
     <!-- Bootstrap core CSS -->
   </head>
 
-<body class="text-center">
+<body class="text-center" style="background-color:#E9E9E9">
 
       <header>
       <!-- Fixed navbar -->
@@ -32,7 +32,7 @@ if(!(isset($_SESSION['logged_in'])) || $_SESSION['logged_in'] == false)
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="user.php">Write<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="write.php">Write<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="logout.php">LogOut<span class="sr-only">(current)</span></a>
@@ -44,7 +44,7 @@ if(!(isset($_SESSION['logged_in'])) || $_SESSION['logged_in'] == false)
 
 
 
-      <div class="album py-5 bg-light" style="margin-top:50px">
+      <div class="album py-5" style="margin-top:50px">
         <div class="container">
           <div class="row">
 
