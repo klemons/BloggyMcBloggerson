@@ -12,7 +12,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
 </head>
-<body>
+<body style="background-color:#E9E9E9">>
 
 	<header>
       <!-- Fixed navbar -->
@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="user.php">Write<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="write.php">Write<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="logout.php">LogOut<span class="sr-only">(current)</span></a>
@@ -33,6 +33,7 @@
         </div>
       </nav>
     </header>
+
 
 <?php
     if(isset($_POST['read']))
@@ -62,9 +63,12 @@
     	echo "<br/>";
     	echo "<br/>";
     	echo "<br/>";
-      	echo $row["title"];
-      	echo "<br/>";
-      	echo $row["story"];
+
+      echo '<main role="main" class="container"> <h1 class="mt-5">'; 
+      echo $row["title"]; 
+      echo'</h1> <p class="lead">'; 
+      echo $row["story"]; 
+      echo'</p> </main>';
 		}
       $conn->close();
 		}
